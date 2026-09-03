@@ -7,7 +7,7 @@ public class Main {
         int satietyCow = 80;
         int satietySheep = 80;
         int satietyChicken = 80;
-        int newerHunger;
+
 
         /*
         * Aufgabe:
@@ -24,9 +24,8 @@ public class Main {
 
 
         for (int i = 0; i < 5; i++) {
-            newerHunger = getHungrier(satietyChicken);
-            int newerhunger2 = getHungrier(newerHunger);
-            System.out.println(newerhunger2);
+            satietyChicken = getHungrier(satietyChicken);
+            System.out.println(satietyChicken);
         }
 
     }
