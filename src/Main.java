@@ -8,24 +8,28 @@ public class Main {
         int satietySheep = 80;
         int satietyChicken = 80;
 
+        
+        for (int i = 0; i < 10; i++) {
 
-        /*
-        * Aufgabe:
-        *
-        * Einen weg finden die z.B satietyCow variable zu verändern ohne 5 verschiedene Variablen zu deklarieren
-        * Eine for schleife schreiben um 5 tage zu simulieren wo die tiere jeden tag hungriger werden. Außerdem werden
-        * ALLE tiere am 3ten tag gefüttert
-        *
-        * Die Tiere dürfen nie Hungriger als 0 werden und nie gesättigter als 100
-        * also wenn ein tier z.B auf 0 hunger ist soll die feed() methode einsetzten (spätestens) nicht
-        * nochmals die getHungrier() Methode
-        * */
+            if (i == 3) {
+                satietyChicken = feed(satietyChicken);
+                satietyCow = feed(satietyCow);
+                satietySheep = feed(satietySheep);
+            }
 
+            if (satietyChicken <= 20 || satietyCow <= 20 || satietySheep <= 20) {
+                satietyChicken = feed(satietyChicken);
+                satietyCow = feed(satietyCow);
+                satietySheep = feed(satietySheep);
+                System.out.println("Chicken Hunger: " + satietyChicken + " Cow Hunger: " + satietyCow +  " Sheep Hunger: " + satietySheep);
 
+            } else {
+                satietyChicken = getHungrier(satietyChicken);
+                satietyCow = getHungrier(satietyCow);
+                satietySheep = getHungrier(satietySheep);
+                System.out.println("Chicken Hunger: " + satietyChicken + " Cow Hunger: " + satietyCow +  " Sheep Hunger: " + satietySheep);
+            }
 
-        for (int i = 0; i < 5; i++) {
-            satietyChicken = getHungrier(satietyChicken);
-            System.out.println(satietyChicken);
         }
 
     }
